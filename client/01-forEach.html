@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const products = [
+        { title: "Barrer", check: true },
+        { title: "Cocinar", check: true },
+        { title: "Lavar", check: true },
+        { title: "Dormir", check: false },
+        { title: "Comer", check: true },
+        { title: "Ducharse", check: false },
+      ];
+      const app = document.getElementById("app");
+      products.forEach((product) => {
+        let intp = `<input type="checkbox"/>`
+        if(product.check){
+          intp = `<input type="checkbox" checked/>`
+        }
+        app.innerHTML += 
+        `<li>
+          ${product.title} ${intp} 
+        </li>`;
+      });
+    </script>
+  </body>
+</html>
