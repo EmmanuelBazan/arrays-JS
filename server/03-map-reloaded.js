@@ -20,6 +20,7 @@ const orders = [
     delivered: true,
   },
 ];
+
 const listTotales = orders.map(item => {
     //INCORRECTO se esta modificando el original en memoria
     // item.tax = .19;
@@ -28,8 +29,9 @@ const listTotales = orders.map(item => {
     //CORRECTO no afecta al original en memoria
     return {
         ...item,
-        tax: .19
+        tax: Math.trunc(item.total * .19)
     }
 });
 console.log("ORIGINAL   ",orders);
 console.log("COPIA   ",listTotales);
+   
